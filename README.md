@@ -1,16 +1,12 @@
-# zamitku_program
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QMainWindow
 from ui import Ui_MainWindow
 import json
+
 notes = {
     'Ласкаво просимо!':{
         'текст':'Привіт Це моя крута програмка!',
         'теги':['привітання','старт']
-    
-    self.list_notes = QtWidgets.QlistWidget(self.centralwidget)-
-    
     },
     'Програмування!':{
         'текст':'Ми працюємо на мов Python!',
@@ -31,10 +27,11 @@ class Widget(QMainWindow):
 
 
     def show_note(self):
-        key = self.ui.list_notes.selectedItems() [0].text()
-        self.ui.text.setText(notes[key]["Текст"])
+        key = self.ui.list_notes.selectedItems()[0].text()
+        self.ui.text.setText(notes[key]["текст"])
         self.ui.list_tags.clear()
         self.ui.list_tags.addItems(notes[key]['теги'])
+
 app= QApplication([])
 ex = Widget()
 ex.show()
